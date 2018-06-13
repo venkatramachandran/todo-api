@@ -1,0 +1,18 @@
+{
+  "name": "todo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "mysql2": "^1.5.3",
+    "restify": "^7.2.1",
+    "restify-cors-middleware": "^1.1.1",
+    "sequelize": "^4.37.10"
+  }
+}
