@@ -22,13 +22,8 @@ const init = (server) => {
         next();
     });
     
-    server.put('/todos/:id/complete', async (req, res, next) => {
-        const instance = await todoHandler.markTodoComplete(req.params.id, true);
-        res.json(instance);
-        next();
-    });
-    server.put('/todos/:id/incomplete', async (req, res, next) => {
-        const instance = await todoHandler.markTodoComplete(req.params.id, false);
+    server.put('/todos/:id', async (req, res, next) => {
+        const instance = await todoHandler.markTodoComplete(req.params.id, req.body.complete);
         res.json(instance);
         next();
     });
