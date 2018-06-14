@@ -33,3 +33,17 @@ spec:
         volumeMounts:
         - mountPath: "/var/lib/mysql"
           name: db-storage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  type: NodePort
+  ports:
+  - port: 3306
+    protocol: TCP
+  selector:
+    app: mysql

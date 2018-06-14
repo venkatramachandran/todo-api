@@ -26,3 +26,17 @@ spec:
           value: todo
         - name: MYSQL_PASSWORD
           value: todo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+  labels:
+    app: mysql
+spec:
+  type: NodePort
+  ports:
+  - port: 3306
+    protocol: TCP
+  selector:
+    app: mysql
